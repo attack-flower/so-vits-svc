@@ -1,0 +1,14 @@
+{
+    "spk": {
+        "你的config.json里面spk的名字1": {
+            "model": "这里是对应model.pth的路径",
+            "config": "这里是对应configs.json的路径",
+            "cluster_model": ""
+        },
+        "你的config.json里面spk的名字2": {
+            "model": "这里是对应model.pth的路径",
+            "config": "这里是对应configs.json的路径",
+            "cluster_model": ""
+        }
+    }
+}
