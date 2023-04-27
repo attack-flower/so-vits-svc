@@ -1,0 +1,11 @@
+version: "3"
+services:
+  so-vits-svc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: so-vits-svc
+    ports:
+      - "7860:7860"
+    volumes:
+      - /home/sovits_configs:/so-vits-svc/custom_configs
