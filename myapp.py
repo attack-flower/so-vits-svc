@@ -274,4 +274,5 @@ with gr.Blocks(
                           enhancer_adaptive_key, cr_threshold], [vc_output1, vc_output2])
         debug_button.change(debug_change, [], [])
         sid.change(sid_change, [sid], [sid_output])
-    app.launch()
+    # 启动gradio，设置server_name为0.0.0.0以便局域网内其他设备可以通过ip:7860访问。
+    app.launch(server_name='0.0.0.0')
