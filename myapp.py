@@ -148,12 +148,12 @@ def debug_change():
 def modelUnload():
     global model
     if model is None:
-        return sid.update(choices = [],value=""),"没有模型需要卸载!"
+        pass
     else:
         model.unload_model()
         model = None
         torch.cuda.empty_cache()
-        return sid.update(choices = [],value=""),"模型卸载完毕!"
+        # print("模型卸载完毕!")
 
 
 def sid_change(sid,device="Auto"):
@@ -165,7 +165,7 @@ def sid_change(sid,device="Auto"):
         speakSetting = json.load(f)
 
     try:
-        print(sid)
+        # print(sid)
         device = cuda[device] if "CUDA" in device else device
         model_path = speakSetting["spk"][sid]["model"]
         config_path = speakSetting["spk"][sid]["config"]
