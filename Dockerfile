@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.10.11
 
 RUN mkdir /so-vits-svc
 WORKDIR /so-vits-svc
@@ -7,12 +7,9 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-WORKDIR /so-vits-svc/hubert
-
-RUN curl -O https://huggingface.co/spaces/innnky/nanami/resolve/main/checkpoint_best_legacy_500.pt
+RUN apt update && apt -y install -qq aria2
+RUN aria2c --console-log-level=error -c -x 16 -k 1M -s 16 https://ibm.ent.box.com/shared/static/z1wgl1stco8ffooyatzdwsqn2psd9lrr -o checkpoint_best_legacy_500.pt -d /so-vits-svc/hubert
 
 EXPOSE 7860
-
-WORKDIR /so-vits-svc
 
 CMD ["python", "myapp.py"]

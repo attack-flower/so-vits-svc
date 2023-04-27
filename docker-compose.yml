@@ -9,3 +9,4 @@ services:
       - "7860:7860"
     volumes:
       - /home/sovits_configs:/so-vits-svc/custom_configs
+    restart: unless-stopped
