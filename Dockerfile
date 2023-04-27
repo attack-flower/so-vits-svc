@@ -13,4 +13,6 @@ RUN curl -O https://huggingface.co/spaces/innnky/nanami/resolve/main/checkpoint_
 
 EXPOSE 7860
 
+WORKDIR /so-vits-svc
+
 CMD ["python", "myapp.py"]
