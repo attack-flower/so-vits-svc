@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 ## Docker
 
-第一次编docker，实测我的古董ubuntu能用的。
+第一次编docker，实测我的古董ubuntu能用的。(在Docker容器中安装方式跟本机一致，不知为何我的Docker容器运存无法释放，而我mac本机是没有问题的。如果你也遇到这种情况，可以增加一个定时任务每天定时重启一下该docker容器释放运存。)
 
 1. cd到你通常放docker文件的位置。克隆项目。
 
